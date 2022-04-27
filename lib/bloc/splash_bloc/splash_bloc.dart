@@ -25,12 +25,12 @@ class SplashState with _$SplashState {
 }
 
 class SplashBloc extends Bloc<SplashEvent, SplashState> {
-  static const String _TAG = '[SplashBloc]';
+  static const String _kTAG = '[SplashBloc]';
   // final MainRepo _mainRepo = Platform.environment.containsKey('FLUTTER_TEST') ? MainRepoMock() : MainRepoImpl();
 
   SplashBloc() : super(const InitialSplashState()) {
     on<FetchWeatherExampleEvent>((event, emit) async {
-      print('$_TAG <getData>');
+      print('$_kTAG <getData>');
 
       emit(const SplashState.loading());
 

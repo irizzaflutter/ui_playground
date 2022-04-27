@@ -15,7 +15,7 @@ class _ApplicationState extends State<Application> {
   @override
   void initState() {
     super.initState();
-    _splashBloc = SplashBloc()..add(FetchWeatherExampleEvent());
+    _splashBloc = SplashBloc()..add(const FetchWeatherExampleEvent());
   }
 
   //Todo (Bohdan): Navigator 2.0

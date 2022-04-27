@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:ui_playground/constants/app_colors.dart';
 
 class AppTextStyles extends TextStyle {
-  static const kFontName = 'BarlowCondensed';
+  static const _kFontName = 'BarlowCondensed';
 
   static double _height = 1;
   static double _textSize = 12.0;
@@ -23,6 +23,6 @@ class AppTextStyles extends TextStyle {
           color: _fontColor,
           fontSize: _textSize,
           fontWeight: _fontWeight,
-          fontFamily: kFontName,
+          fontFamily: _kFontName,
         );
 }
