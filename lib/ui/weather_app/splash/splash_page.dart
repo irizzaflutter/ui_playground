@@ -25,6 +25,7 @@ class _SplashPageState extends State<SplashPage> {
         listener: (context, state) {
           state.mapOrNull(
             loaded: (c) {
+              //Todo (Bodo): navigate to HomePage
               print('aga');
             },
             error: (s) => print('cc'),
