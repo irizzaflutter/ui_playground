@@ -20,13 +20,13 @@ class _SplashPageState extends State<SplashPage> {
   Widget build(BuildContext context) {
     return MainLayout(
       body: BlocConsumer<SplashBloc, SplashState>(
-        buildWhen: (s, c) => true,
-        listener: (c, s) {
-          print(s.toString());
-          s.mapOrNull(
+        buildWhen: (previous, current) => true,
+        listener: (context, state) {
+          state.mapOrNull(
             loaded: (c) {
               print('aga');
             },
+            error: (s) => print('cc'),
           );
         },
         builder: (BuildContext context, SplashState state) {

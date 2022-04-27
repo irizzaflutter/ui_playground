@@ -29,26 +29,20 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
   // final MainRepo _mainRepo = Platform.environment.containsKey('FLUTTER_TEST') ? MainRepoMock() : MainRepoImpl();
 
   SplashBloc() : super(const InitialSplashState()) {
-    print('zzz');
-
-    // add(FetchWeatherExampleEvent(city: 'xas', countryCode: 'da'));
     on<FetchWeatherExampleEvent>((event, emit) async {
       print('$_TAG <getData>');
 
       emit(const SplashState.loading());
 
-      await Future.delayed(Duration(seconds: 1));
+      await Future.delayed(const Duration(seconds: 1));
 
-      print('ddd');
-      emit(SplashState.loaded());
+      try {
+        // API call / DB
 
-      // try {
-      //   final MainData weatherData = await _mainRepo.getWeather(event.city, event.countryCode);
-      //
-      //   emit(ExampleState.loaded(city: event.city, weatherData: weatherData));
-      // } on DioError catch (e) {
-      //   emit(ExampleState.error(e.message));
-      // }
+        emit(const SplashState.loaded());
+      } catch (e) {
+        emit(SplashState.error(e.toString()));
+      }
     });
   }
 }
