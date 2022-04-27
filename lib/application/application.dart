@@ -11,11 +11,11 @@ class Application extends StatefulWidget {
 }
 
 class _ApplicationState extends State<Application> {
-  final SplashBloc _splashBloc = SplashBloc()..add(FetchWeatherExampleEvent(city: '', countryCode: ''));
+  late final SplashBloc _splashBloc;
   @override
   void initState() {
     super.initState();
-    //  _splashBloc = SplashBloc();
+    _splashBloc = SplashBloc()..add(FetchWeatherExampleEvent());
   }
 
   //Todo (Bohdan): Navigator 2.0

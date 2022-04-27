@@ -8,7 +8,7 @@ part 'splash_bloc.freezed.dart';
 class SplashEvent with _$SplashEvent {
   const SplashEvent._();
 
-  const factory SplashEvent.fetchWeather({required String city, required String countryCode}) = FetchWeatherExampleEvent;
+  const factory SplashEvent.fetchWeather() = FetchWeatherExampleEvent;
 }
 
 @freezed
