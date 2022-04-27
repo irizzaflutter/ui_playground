@@ -4,4 +4,3 @@ import 'package:ui_playground/application/application.dart';
 void main() {
   runApp(const Application());
 }
-
