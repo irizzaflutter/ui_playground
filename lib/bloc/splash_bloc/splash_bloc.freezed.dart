@@ -16,21 +16,19 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$SplashEvent {
-  String get city => throw _privateConstructorUsedError;
-  String get countryCode => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String city, String countryCode) fetchWeather,
+    required TResult Function() fetchWeather,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String city, String countryCode)? fetchWeather,
+    TResult Function()? fetchWeather,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String city, String countryCode)? fetchWeather,
+    TResult Function()? fetchWeather,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -50,10 +48,6 @@ mixin _$SplashEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $SplashEventCopyWith<SplashEvent> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -61,7 +55,6 @@ abstract class $SplashEventCopyWith<$Res> {
   factory $SplashEventCopyWith(
           SplashEvent value, $Res Function(SplashEvent) then) =
       _$SplashEventCopyWithImpl<$Res>;
-  $Res call({String city, String countryCode});
 }
 
 /// @nodoc
@@ -71,33 +64,13 @@ class _$SplashEventCopyWithImpl<$Res> implements $SplashEventCopyWith<$Res> {
   final SplashEvent _value;
   // ignore: unused_field
   final $Res Function(SplashEvent) _then;
-
-  @override
-  $Res call({
-    Object? city = freezed,
-    Object? countryCode = freezed,
-  }) {
-    return _then(_value.copyWith(
-      city: city == freezed
-          ? _value.city
-          : city // ignore: cast_nullable_to_non_nullable
-              as String,
-      countryCode: countryCode == freezed
-          ? _value.countryCode
-          : countryCode // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
 }
 
 /// @nodoc
-abstract class $FetchWeatherExampleEventCopyWith<$Res>
-    implements $SplashEventCopyWith<$Res> {
+abstract class $FetchWeatherExampleEventCopyWith<$Res> {
   factory $FetchWeatherExampleEventCopyWith(FetchWeatherExampleEvent value,
           $Res Function(FetchWeatherExampleEvent) then) =
       _$FetchWeatherExampleEventCopyWithImpl<$Res>;
-  @override
-  $Res call({String city, String countryCode});
 }
 
 /// @nodoc
@@ -111,88 +84,51 @@ class _$FetchWeatherExampleEventCopyWithImpl<$Res>
   @override
   FetchWeatherExampleEvent get _value =>
       super._value as FetchWeatherExampleEvent;
-
-  @override
-  $Res call({
-    Object? city = freezed,
-    Object? countryCode = freezed,
-  }) {
-    return _then(FetchWeatherExampleEvent(
-      city: city == freezed
-          ? _value.city
-          : city // ignore: cast_nullable_to_non_nullable
-              as String,
-      countryCode: countryCode == freezed
-          ? _value.countryCode
-          : countryCode // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$FetchWeatherExampleEvent extends FetchWeatherExampleEvent {
-  const _$FetchWeatherExampleEvent(
-      {required this.city, required this.countryCode})
-      : super._();
-
-  @override
-  final String city;
-  @override
-  final String countryCode;
+  const _$FetchWeatherExampleEvent() : super._();
 
   @override
   String toString() {
-    return 'SplashEvent.fetchWeather(city: $city, countryCode: $countryCode)';
+    return 'SplashEvent.fetchWeather()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is FetchWeatherExampleEvent &&
-            const DeepCollectionEquality().equals(other.city, city) &&
-            const DeepCollectionEquality()
-                .equals(other.countryCode, countryCode));
+        (other.runtimeType == runtimeType && other is FetchWeatherExampleEvent);
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(city),
-      const DeepCollectionEquality().hash(countryCode));
-
-  @JsonKey(ignore: true)
-  @override
-  $FetchWeatherExampleEventCopyWith<FetchWeatherExampleEvent> get copyWith =>
-      _$FetchWeatherExampleEventCopyWithImpl<FetchWeatherExampleEvent>(
-          this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String city, String countryCode) fetchWeather,
+    required TResult Function() fetchWeather,
   }) {
-    return fetchWeather(city, countryCode);
+    return fetchWeather();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String city, String countryCode)? fetchWeather,
+    TResult Function()? fetchWeather,
   }) {
-    return fetchWeather?.call(city, countryCode);
+    return fetchWeather?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String city, String countryCode)? fetchWeather,
+    TResult Function()? fetchWeather,
     required TResult orElse(),
   }) {
     if (fetchWeather != null) {
-      return fetchWeather(city, countryCode);
+      return fetchWeather();
     }
     return orElse();
   }
@@ -227,19 +163,8 @@ class _$FetchWeatherExampleEvent extends FetchWeatherExampleEvent {
 }
 
 abstract class FetchWeatherExampleEvent extends SplashEvent {
-  const factory FetchWeatherExampleEvent(
-      {required final String city,
-      required final String countryCode}) = _$FetchWeatherExampleEvent;
+  const factory FetchWeatherExampleEvent() = _$FetchWeatherExampleEvent;
   const FetchWeatherExampleEvent._() : super._();
-
-  @override
-  String get city => throw _privateConstructorUsedError;
-  @override
-  String get countryCode => throw _privateConstructorUsedError;
-  @override
-  @JsonKey(ignore: true)
-  $FetchWeatherExampleEventCopyWith<FetchWeatherExampleEvent> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
